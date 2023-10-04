@@ -1,0 +1,42 @@
+@startuml
+
+abstract Account
+interface Payment
+class PersonalAccount
+
+Account <|--- PersonalAccount :extends
+Payment <|--- PersonalAccount :implements
+
+interface Payment {
+    public Set<PaymentMethod> getPaymentMethods();
+}
+
+class Account {
+    private String id;
+    private String name;
+    private String address;
+    private LocalDate createdAt;
+    public Account();
+    public Account(id:String, name:String, address:String, createdAt:LocalDate)
+}
+
+class PersonalAccount {
+    private String firstName;
+    private String lastName;
+    private PersonalAccount();
+    public PersonalAccount(id:String, name:String, address:String, createdAt:LocalDate,firstName:String,lastName:String)
+    public Set<PaymentMethod> getPaymentMethods();
+    public String getNormalizedName(name:String)
+    private String normalize(name:String)
+}
+
+enum PaymentMethod {
+    VISA,
+    MASTER,
+    AMEX,
+    DISCOVER,
+    CASH
+}
+@enduml
+
+
