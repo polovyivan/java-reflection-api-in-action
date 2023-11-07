@@ -18,7 +18,6 @@ public class PersonalAccount extends Account implements Payment {
         this.firstName = normalize(firstName);
         this.lastName = normalize(lastName);
     }
-
     private PersonalAccount() {
         super();
     }
@@ -60,5 +59,14 @@ public class PersonalAccount extends Account implements Payment {
 
     private String normalize(String name) {
         return name == null ? null : name.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "PersonalAccount{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", id='" + id + '\'' +
+                '}';
     }
 }

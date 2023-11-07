@@ -1,5 +1,5 @@
 @startuml
-
+title Example of a code structure
 abstract Account
 interface Payment
 class PersonalAccount

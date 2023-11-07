@@ -1,5 +1,8 @@
-package com.polovyi.ivan.tutorials;
+package com.polovyi.ivan.tutorials.demo;
 
+import com.polovyi.ivan.tutorials.Account;
+import com.polovyi.ivan.tutorials.PaymentMethod;
+import com.polovyi.ivan.tutorials.PersonalAccount;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.AnnotatedType;
 import java.lang.reflect.Field;

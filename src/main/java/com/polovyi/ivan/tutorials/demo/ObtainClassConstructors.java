@@ -1,5 +1,6 @@
-package com.polovyi.ivan.tutorials;
+package com.polovyi.ivan.tutorials.demo;
 
+import com.polovyi.ivan.tutorials.PersonalAccount;
 import java.lang.reflect.Constructor;
 import java.time.LocalDate;
 import java.util.Arrays;

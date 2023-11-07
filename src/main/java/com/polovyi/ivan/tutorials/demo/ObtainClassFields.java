@@ -1,7 +1,9 @@
-package com.polovyi.ivan.tutorials;
+package com.polovyi.ivan.tutorials.demo;
 
+import com.polovyi.ivan.tutorials.Account;
+import com.polovyi.ivan.tutorials.PaymentMethod;
+import com.polovyi.ivan.tutorials.PersonalAccount;
 import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
 import java.time.LocalDate;
 import java.util.Arrays;
 
@@ -37,12 +39,12 @@ public class ObtainClassFields {
         Class<?> type = lastName.getType();
         System.out.println("type = " + type);
 
-        System.out.println("\nGet a value of a public field");
+        System.out.println("\nGet a value of a private field: ");
         firstName.setAccessible(true);
         String firstNameValue = (String) firstName.get(personalAccount);
         System.out.println("firstNameValue = " + firstNameValue);
 
-        System.out.println("\nGet a value of a public field");
+        System.out.println("\nGet a value of a public field: ");
         String lastNameValue = (String) lastName.get(personalAccount);
         System.out.println("lastNameValue = " + lastNameValue);
 
@@ -55,12 +57,12 @@ public class ObtainClassFields {
         lastName.set(personalAccount, "changedLastName");
         System.out.println("Changed field lastName: " + personalAccount.getLastName());
 
-        System.out.println("\nEnum: " );
+        System.out.println("\nEnum: ");
         Class<PaymentMethod> paymentMethodClass = PaymentMethod.class;
         boolean anEnum = paymentMethodClass.isEnum();
         System.out.println("is enum = " + anEnum);
 
-        System.out.println("\nEnum fields: " );
+        System.out.println("\nEnum fields: ");
         Field[] declaredFields = paymentMethodClass.getDeclaredFields();
         Arrays.stream(declaredFields).forEach(System.out::println);
     }
